@@ -29,6 +29,10 @@ The user of this site is someone looking for a delicious sandwich, wether it be 
 
 [ERD](https://drive.google.com/file/d/1v8ckmxnDQQsGC-TtziQKy4Hjia0MRbTq/view?usp=sharing)
 
+## React Architecture:
+
+[React Arc](https://drive.google.com/file/d/18ol0KcGyTJIhxkKrW_9mOjO3zKC5uBuv/view?usp=sharing)
+
 ## Time Frame:
 
 | Component| Priority | Estimated Time | Actual Time |
