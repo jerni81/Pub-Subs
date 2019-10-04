@@ -7,13 +7,13 @@ I'm planning on building a sandwich ordering app. The name of the app is going t
 ##Technologies:
 
 React
-Ruby on Rails
-Axios
-FontAwesome
-CORS
-react-router-dom
-JSON web Token
-Bcrypt
+<br>Ruby on Rails
+<br>Axios
+<br>FontAwesome
+<br>CORS
+<br>react-router-dom
+<br>JSON web Token
+<br>Bcrypt
 
 ##User Stories:
 
@@ -21,13 +21,13 @@ The user of this site is someone looking for a delicious sandwich, wether it be 
 
 ##Wireframes:
 
-![wireframe1](https://imgur.com/cShdOiV)
-![wireframe2](https://imgur.com/cShdOiV)
-![wireframe3](https://imgur.com/FccrshY)
+![Imgur1](https://imgur.com/cShdOiV)
+![Imgur2](https://imgur.com/LobVA1l)
+![Imgur](https://imgur.com/FccrshY)
 
 ##ERD:
 
-![ERD](file:///Users/aj/Pictures/Photos%20Library.photoslibrary/resources/proxies/derivatives/00/00/e/UNADJUSTEDNONRAW_thumb_e.jpg)
+![Imgur](https://imgur.com/zUCBkyK)
 
 ##Time Frame:
 
