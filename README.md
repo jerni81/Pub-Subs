@@ -21,13 +21,13 @@ The user of this site is someone looking for a delicious sandwich, wether it be 
 
 ##Wireframes:
 
-![Imgur1](https://imgur.com/cShdOiV)
-![Imgur2](https://imgur.com/LobVA1l)
-![Imgur](https://imgur.com/FccrshY)
+![Wireframe 1](https://res.cloudinary.com/dam4mgygn/image/upload/v1570199766/UNADJUSTEDNONRAW_thumb_b_ljkyta.jpg)
+![Wireframe 2](https://res.cloudinary.com/dam4mgygn/image/upload/v1570199757/UNADJUSTEDNONRAW_thumb_c_gkqpr0.jpg)
+![Wireframe 3](https://res.cloudinary.com/dam4mgygn/image/upload/v1570199750/UNADJUSTEDNONRAW_thumb_d_jp3hk1.jpg)
 
 ##ERD:
 
-![Imgur](https://imgur.com/zUCBkyK)
+![ERD](https://drive.google.com/file/d/1v8ckmxnDQQsGC-TtziQKy4Hjia0MRbTq/view?usp=sharing)
 
 ##Time Frame:
 
