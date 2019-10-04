@@ -1,10 +1,10 @@
-Pub Subs
+## Pub Subs
 
-##Scope:
+## Scope:
 
 I'm planning on building a sandwich ordering app. The name of the app is going to be Pub Subs. I think I'll reasonably be able to implement a full site linked to a populated database, that will have full CRUD abilities. I would like for the site to be complete to the point where someone would put in their payment information to pay for their sandwiches.
 
-##Technologies:
+## Technologies:
 
 React
 <br>Ruby on Rails
@@ -15,21 +15,21 @@ React
 <br>JSON web Token
 <br>Bcrypt
 
-##User Stories:
+## User Stories:
 
 The user of this site is someone looking for a delicious sandwich, wether it be for lunch dinner, or for a party. They know and love the Pub Sub already and now just want quick access to ordering their very own flavorful masterpiece.
 
-##Wireframes:
+## Wireframes:
 
 ![Wireframe 1](https://res.cloudinary.com/dam4mgygn/image/upload/v1570199766/UNADJUSTEDNONRAW_thumb_b_ljkyta.jpg)
 ![Wireframe 2](https://res.cloudinary.com/dam4mgygn/image/upload/v1570199757/UNADJUSTEDNONRAW_thumb_c_gkqpr0.jpg)
 ![Wireframe 3](https://res.cloudinary.com/dam4mgygn/image/upload/v1570199750/UNADJUSTEDNONRAW_thumb_d_jp3hk1.jpg)
 
-##ERD:
+## ERD:
 
 [ERD](https://drive.google.com/file/d/1v8ckmxnDQQsGC-TtziQKy4Hjia0MRbTq/view?usp=sharing)
 
-##Time Frame:
+## Time Frame:
 
 | Component| Priority | Estimated Time | Actual Time |
 | --- | --- | --- | --- |
