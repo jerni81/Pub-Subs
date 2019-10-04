@@ -27,7 +27,7 @@ The user of this site is someone looking for a delicious sandwich, wether it be 
 
 ##ERD:
 
-![ERD](https://imgur.com/zUCBkyK)
+![ERD](file:///Users/aj/Pictures/Photos%20Library.photoslibrary/resources/proxies/derivatives/00/00/e/UNADJUSTEDNONRAW_thumb_e.jpg)
 
 ##Time Frame:
 
