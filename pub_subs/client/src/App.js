@@ -3,7 +3,7 @@ import './App.css'
 import Header from './components/header'
 import Main from './components/main'
 import Footer from './components/footer'
-import { loginUser, registerUser, verifyUser, showMenu } from './services/api-helper'
+import { loginUser, registerUser, verifyUser, showMenu, showIngred } from './services/api-helper'
 
 class App extends Component {
   state={
@@ -12,7 +12,8 @@ class App extends Component {
       password: ''
     },
     currentUser: null,
-    menuData: []
+    menuData: [],
+    ingredData: []
   }
 
   //==================================
@@ -69,6 +70,11 @@ class App extends Component {
       this.setState({
         menuData: menu
       })
+      const ingredients = await showIngred();
+      console.log('this is menu', ingredients)
+      this.setState({
+        ingredData: ingredients
+      })
    }
 
   render() {
@@ -84,6 +90,7 @@ class App extends Component {
           handleLogin={this.handleLogin}
           handleRegister={this.handleRegister}
           getMenu={this.state.menuData}
+          getIngred={this.state.ingredData}
         />
         <Footer />
 

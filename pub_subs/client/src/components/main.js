@@ -3,6 +3,7 @@ import Login from './login'
 import Register from './register'
 import Home from './home'
 import Menu from './menu'
+import Create from './create'
 import {Route} from 'react-router-dom'
 
 const Main = (props) => {
@@ -30,6 +31,11 @@ const Main = (props) => {
     <Route path='/menu' render={()=>(
       <Menu
         getMenu={props.getMenu}
+      />
+    )} />
+    <Route path='/create' render={()=>(
+      <Create
+        getIngred={props.getIngred}
       />
     )} />
 

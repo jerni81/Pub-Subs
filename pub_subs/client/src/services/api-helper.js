@@ -35,3 +35,12 @@ export const showMenu = async () => {
     console.log(e.message);
   }
 }
+
+export const showIngred = async () => {
+  try {
+    const ingredients = await api.get(`/ingredients`);
+    return ingredients.data;
+  } catch (e) {
+    console.log(e.message);
+  }
+}
