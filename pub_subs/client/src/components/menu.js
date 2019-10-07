@@ -7,7 +7,15 @@ const Menu = (props) => {
 
   console.log('this is menu data', props.getMenu)
   const subs = props.getMenu.map((sub, id) => {
-    return <div key="id">{sub.name}</div>
+    return <form key="id">
+        <label>
+        {sub.name}
+          <input
+            name="selected"
+            type="checkbox"
+          />
+        </label>
+      </form>
   })
   return (
     <div className="menu">

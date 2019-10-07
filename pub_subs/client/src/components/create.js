@@ -19,9 +19,6 @@ const Create = (props) => {
   })
 
   console.log('this is menu data', props.getIngred)
-  // const ingredients = props.getIngred.map((ingredients, id) => {
-  //   return <div key="id">{ingredients.name} {ingredients.category}</div>
-  // })
   return (
     <div className="menu">
       {ingredients}
