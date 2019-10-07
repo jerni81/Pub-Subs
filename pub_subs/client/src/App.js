@@ -1,26 +1,95 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import Header from './components/header'
+import Main from './components/main'
+import Footer from './components/footer'
+import { loginUser, registerUser, verifyUser, showMenu } from './services/api-helper'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state={
+    authFormData: {
+      email: '',
+      password: ''
+    },
+    currentUser: null,
+    menuData: []
+  }
+
+  //==================================
+  //============AUTH==================
+  //==================================
+
+  handleLogin = async (e) => {
+    e.preventDefault();
+    const currentUser = await loginUser(this.state.authFormData);
+    this.setState({currentUser});
+  }
+
+  handleRegister = async (e) => {
+
+    e.preventDefault();
+    console.log(this.state.authFormData);
+    const currentUser = await registerUser(this.state.authFormData);
+    this.setState({currentUser});
+  }
+
+  handleLogout = () => {
+    console.log('hello');
+      this.setState({
+        currentUser: null
+      })
+      localStorage.removeItem("authToken");
+    }
+
+
+  authHandleChange = (e) => {
+     const {name, value} = e.target;
+
+     this.setState(prevState => ({
+       authFormData: {
+         ...prevState.authFormData,
+         [name]: value
+       }
+     }))
+   }
+
+   handleVerify = async () => {
+     const currentUser = await verifyUser();
+     if (currentUser) {
+       this.setState({ currentUser})
+     }
+   }
+
+   //==========API Functions===========
+
+   componentDidMount = async () => {
+     this.handleVerify()
+      const menu = await showMenu();
+      console.log('this is menu', menu)
+      this.setState({
+        menuData: menu
+      })
+   }
+
+  render() {
+    return (
+      <div className='App'>
+        <Header
+          handleLogout={this.handleLogout}
+          currentUser={this.state.currentUser}
+        />
+        <Main
+          authFormData={this.state.authFormData}
+          authHandleChange={this.authHandleChange}
+          handleLogin={this.handleLogin}
+          handleRegister={this.handleRegister}
+          getMenu={this.state.menuData}
+        />
+        <Footer />
+
+      </div>
+    )
+  }
 }
 
 export default App;
