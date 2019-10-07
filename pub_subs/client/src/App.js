@@ -92,7 +92,7 @@ class App extends Component {
           getMenu={this.state.menuData}
           getIngred={this.state.ingredData}
         />
-        <Footer />
+        
 
       </div>
     )

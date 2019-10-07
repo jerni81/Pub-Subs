@@ -4,12 +4,13 @@ import Register from './register'
 import Home from './home'
 import Menu from './menu'
 import Create from './create'
+import Footer from './footer'
 import {Route} from 'react-router-dom'
 
 const Main = (props) => {
   const {email, password} = props.authFormData
   return (
-    <div>
+    <div className="main">
     <Route path='/home' render={()=>(
       <Home
       />
@@ -38,7 +39,7 @@ const Main = (props) => {
         getIngred={props.getIngred}
       />
     )} />
-
+    <Footer />
     </div>
   )
 }
