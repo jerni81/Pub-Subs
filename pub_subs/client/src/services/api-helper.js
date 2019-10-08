@@ -44,3 +44,12 @@ export const showIngred = async () => {
     console.log(e.message);
   }
 }
+
+export const newSand = async () => {
+  try {
+    const newSandwich = await api.post(`/sandwiches`);
+    return newSandwich.data;
+  } catch (e) {
+    console.log(e.message);
+  }
+}

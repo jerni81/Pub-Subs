@@ -11,8 +11,9 @@ const Menu = (props) => {
         <label>
         {sub.name}
           <input
-            name="selected"
-            type="checkbox"
+            type="number"
+            min="1"
+            max="5"
           />
         </label>
       </form>

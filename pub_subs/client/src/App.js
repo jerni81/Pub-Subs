@@ -4,6 +4,7 @@ import Header from './components/header'
 import Main from './components/main'
 import Footer from './components/footer'
 import { loginUser, registerUser, verifyUser, showMenu, showIngred } from './services/api-helper'
+import { Redirect } from 'react-router'
 
 class App extends Component {
   state={
@@ -92,7 +93,7 @@ class App extends Component {
           getMenu={this.state.menuData}
           getIngred={this.state.ingredData}
         />
-        
+
 
       </div>
     )
