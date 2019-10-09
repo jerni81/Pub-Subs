@@ -53,3 +53,12 @@ export const newSand = async (sandData) => {
     console.log(e.message);
   }
 }
+
+export const deleteSand = async (sandData) => {
+  try {
+    const deleted = await api.delete('/sandwiches/:id', sandData);
+    return deleted.data;
+  } catch (e) {
+    console.log(e.message);
+  }
+}

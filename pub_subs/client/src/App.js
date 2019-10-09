@@ -3,7 +3,7 @@ import './App.css'
 import Header from './components/header'
 import Main from './components/main'
 import Footer from './components/footer'
-import { loginUser, registerUser, verifyUser, showMenu, showIngred, newSand } from './services/api-helper'
+import { loginUser, registerUser, verifyUser, showMenu, showIngred, newSand, deleteSand } from './services/api-helper'
 import { Redirect } from 'react-router'
 
 class App extends React.Component {
@@ -82,6 +82,10 @@ class App extends React.Component {
      const newSandwich = await newSand(sandData);
    }
 
+   handleDelete = async (sandData) => {
+     const deleted = await deleteSand(sandData);
+   }
+
 
 
   render() {
@@ -99,6 +103,7 @@ class App extends React.Component {
           getMenu={this.state.menuData}
           getIngred={this.state.ingredData}
           makeNew={this.handleNew}
+          delete={this.handleDelete}
         />
 
 

@@ -40,14 +40,8 @@ class Create extends React.Component {
 
 
   handleSubmit = (e) => {
-    // e.preventDefault()
-    // this.props.makeNew(()=>{
-    //   this.setState(prevState => ({
-    //     newSandwich: {
-    //       ...prevState
-    //     }
-    //   })
-    // })
+    e.preventDefault()
+    this.props.makeNew(this.state.newSandwich)  
   }
 
  handleNameChange = (e) => {
