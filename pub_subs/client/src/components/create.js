@@ -2,41 +2,152 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 
-const Create = (props) => {
-  const categories = {
-    Meat: [],
-    Veggies: [],
-    Condiments: []
+class Create extends React.Component {
+  constructor(props){
+    super(props)
   }
 
-  props.getIngred.forEach((ing)=> categories[ing.category].push(ing))
+  state = {
+    categories: {
+      Bread: [],
+      Meat: [],
+      Veggies: [],
+      Condiments: []
+    },
+    newSandwich: {
+      name: "",
+      ingredients: []
+    }
+  }
 
-  const ingredients = Object.keys(categories).map((cat) => {
-    return <div>
-     { cat == "Meat" ? (<div className="ingred">
-      <h4>{cat}</h4>
-      {categories[cat].map((ing) => <label>{ing.name}<input type="checkbox" /></label>)}
-    </div> ): (
-      <div className="ingred">
-        <h4>{cat}</h4>
-        {categories[cat].map((ing) => <label>{ing.name}<input type="radio" name="radio"/></label>)}
+  componentDidUpdate(prevProps) {
+    if (prevProps.getIngred !== this.props.getIngred) {
+      this.props.getIngred.forEach((ing) => {
+        this.setState(prevState => ({
+          categories: {
+            ...prevState.categories,
+            [ing.category]: [
+              ...prevState.categories[ing.category],
+              ing
+            ]
+          }
+        }))
+      })
+    }
+  }
+
+
+
+
+  handleSubmit = (e) => {
+    // e.preventDefault()
+    // this.props.makeNew(()=>{
+    //   this.setState(prevState => ({
+    //     newSandwich: {
+    //       ...prevState
+    //     }
+    //   })
+    // })
+  }
+
+ handleNameChange = (e) => {
+   const {value} = e.target
+   this.setState(prevState => ({
+     newSandwich: {
+       ...prevState.newSandwich,
+       name: value
+     }
+   }))
+ }
+
+ handleIngredientCheckboxChange = (e, ing) => {
+   const {checked} = e.target
+   if (checked) {
+     this.setState(prevState => ({
+       newSandwich: {
+         ...prevState.newSandwich,
+         ingredients: [
+           ...prevState.newSandwich.ingredients,
+           ing
+         ]
+       }
+     }))
+   } else {
+     this.setState(prevState => ({
+       newSandwich: {
+         ...prevState.newSandwich,
+         ingredients: prevState.newSandwich.ingredients.filter((item) =>{
+           return ing.id !== item.id
+         })
+       }
+     }))
+   }
+ }
+
+ handleIngredientRadioChange = (ing) => {
+  console.log(ing)
+  this.setState(prevState => ({
+    newSandwich: {
+      ...prevState.newSandwich,
+      ingredients: prevState.newSandwich.ingredients.filter((item) =>{
+        return ing.category !== 'Bread'
+      })
+    }
+  }))
+  this.setState(prevState => ({
+    newSandwich: {
+      ...prevState.newSandwich,
+      ingredients: [
+        ...prevState.newSandwich.ingredients,
+        ing
+      ]
+    }
+  }))
+ }
+
+  render() {
+    const ingredients = Object.keys(this.state.categories).map((cat) => {
+      return <div>
+       { cat == "Bread" ? (
+         <div className="ingred">
+          <h4>{cat}</h4>
+          {this.state.categories[cat].map((ing) => (
+            <label>{ing.name}
+              <input
+                type="radio"
+                name={cat}
+                id={ing.name}
+                onChange={() => this.handleIngredientRadioChange(ing)}
+              />
+            </label>
+          ))}
+        </div> ) : (
+        <div className="ingred">
+          <h4>{cat}</h4>
+          {this.state.categories[cat].map((ing) => (
+            <label>{ing.name}
+              <input
+                type="checkbox"
+                name={ing.name}
+                onChange={(e) => this.handleIngredientCheckboxChange(e, ing)}
+              />
+            </label>
+          ))}
+        </div>
+      )}
       </div>
-    )}
-
-    </div>
-  })
-
-  console.log('this is menu data', props.getIngred)
-  return (
-    <div className="menu">
-      <form>
-        Name Your Sandwich <br/>
-        <input type="text" />
-        {ingredients}
-        <button>Create Sandwich</button>
-      </form>
-    </div>
-  )
+    })
+    return (
+      <div className="create">
+        <form onSubmit={this.handleSubmit}>
+          Name Your Sandwich <br/>
+          <input type="text" name="text" id="text" onChange={this.handleNameChange}/>
+          {ingredients}
+          <button>Create Sandwich</button>
+        </form>
+      </div>
+    )
+  }
 }
 
 export default Create;

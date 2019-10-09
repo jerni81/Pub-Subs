@@ -37,6 +37,7 @@ const Main = (props) => {
     <Route path='/create' render={()=>(
       <Create
         getIngred={props.getIngred}
+        makeNew={props.makeNew}
       />
     )} />
     <Footer />

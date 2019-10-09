@@ -3,7 +3,7 @@ import React from 'react'
 const Register = (props) => {
   const {email, password} = props.authFormData
   return (
-    <div>
+    <div className="register">
       <h2>Register</h2>
       <form onSubmit={props.handleRegister}>
         <input

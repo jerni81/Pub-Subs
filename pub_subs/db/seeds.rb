@@ -7,18 +7,42 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Sandwich.create!([
-  {name: "Turkey Sub"},
-  {name: "Ultimate Sub"},
-  {name: "Italian Sub"},
-  {name: "Ham Sub"},
-  {name: "Roast Beef Sub"},
-  {name: "Philly Cheese Sub"},
-  {name: "Cuban"},
-  {name: "Chicken Tender Sub"},
-  {name: "Meatball Sub"}
+  {name: "Turkey Sub",
+  photo:"https://cutpcdnwimages.azureedge.net/images/products/90000/093938-600x600-A.jpg",
+  ingredients: [ white, ]},
+  {name: "Ultimate Sub",
+  photo:"https://cutpcdnwimages.azureedge.net/images/products/90000/093935-600x600-A.jpg"},
+  {name: "Italian Sub",
+  photo:"https://cutpcdnwimages.azureedge.net/images/products/90000/093933-600x600-A.jpg"},
+  {name: "Ham Sub",
+  photo:"https://cutpcdnwimages.azureedge.net/images/products/95000/098723-600x600-A.jpg"},
+  {name: "Roast Beef Sub",
+  photo:"https://cutpcdnwimages.azureedge.net/images/products/95000/098721-600x600-A.jpg"},
+  {name: "Philly Cheese Sub",
+  photo:"https://cutpcdnwimages.azureedge.net/images/products/90000/094994-600x600-A.jpg"},
+  {name: "Cuban",
+  photo:"https://cutpcdnwimages.azureedge.net/images/products/95000/099633-600x600-A.jpg"},
+  {name: "Chicken Tender Sub",
+  photo:"https://cutpcdnwimages.azureedge.net/images/products/90000/090355-600x600-A.jpg"},
+  {name: "Meatball Sub",
+  photo:"https://cutpcdnwimages.azureedge.net/images/products/95000/097201-600x600-A.jpg"}
   ])
 
+white = Ingredient.create(name: "White", category: "Bread")
+wheat = Ingredient.create(name: "Wheat", category: "Bread")
+
+
 Ingredient.create!([
+  {name: "White",
+  category: "Bread"},
+  {name: "Wheat",
+  category: "Bread"},
+  {name: "Sunflower Seed",
+  category: "Bread"},
+  {name: "Pumpernickle",
+  category: "Bread"},
+  {name: "7 Grain",
+  category: "Bread"},
   {name: "Ham",
   category: "Meat"},
   {name: "Turkey",
@@ -57,4 +81,12 @@ Ingredient.create!([
   category: "Condiments"},
   {name: "Pepper",
   category: "Condiments"},
+  {name: "Pepper Jack",
+  category: "Cheese"},
+  {name: "Provolone",
+  category: "Cheese"},
+  {name: "Cheddar",
+  category: "Cheese"},
+  {name: "White Chedder",
+  category: "Cheese"},
   ])

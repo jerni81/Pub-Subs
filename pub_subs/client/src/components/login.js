@@ -4,7 +4,7 @@ import {Link, Redirect} from 'react-router-dom'
 const Login = (props) => {
   const {email, password} = props.authFormData
   return (
-    <div>
+    <div className="login">
       <h2>Login</h2>
       <form onSubmit={props.handleLogin}>
         <input

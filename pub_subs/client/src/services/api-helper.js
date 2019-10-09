@@ -45,9 +45,9 @@ export const showIngred = async () => {
   }
 }
 
-export const newSand = async () => {
+export const newSand = async (sandData) => {
   try {
-    const newSandwich = await api.post(`/sandwiches`);
+    const newSandwich = await api.post('/sandwiches', sandData);
     return newSandwich.data;
   } catch (e) {
     console.log(e.message);

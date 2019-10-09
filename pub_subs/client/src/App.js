@@ -3,10 +3,10 @@ import './App.css'
 import Header from './components/header'
 import Main from './components/main'
 import Footer from './components/footer'
-import { loginUser, registerUser, verifyUser, showMenu, showIngred } from './services/api-helper'
+import { loginUser, registerUser, verifyUser, showMenu, showIngred, newSand } from './services/api-helper'
 import { Redirect } from 'react-router'
 
-class App extends Component {
+class App extends React.Component {
   state={
     authFormData: {
       email: '',
@@ -78,6 +78,12 @@ class App extends Component {
       })
    }
 
+   handleNew = async (sandData) => {
+     const newSandwich = await newSand(sandData);
+   }
+
+
+
   render() {
     return (
       <div className='App'>
@@ -92,6 +98,7 @@ class App extends Component {
           handleRegister={this.handleRegister}
           getMenu={this.state.menuData}
           getIngred={this.state.ingredData}
+          makeNew={this.handleNew}
         />
 
 
