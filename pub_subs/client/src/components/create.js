@@ -12,7 +12,8 @@ class Create extends React.Component {
       Bread: [],
       Meat: [],
       Veggies: [],
-      Condiments: []
+      Condiments: [],
+      Cheese: []
     },
     newSandwich: {
       name: "",
@@ -108,9 +109,9 @@ class Create extends React.Component {
     let redirect = this.state.redirect && <Redirect to={"/menu"}/>
     console.log(this.props)
     const ingredients = Object.keys(this.state.categories).map((cat) => {
-      return <div>
+      return <div className={cat}>
        { cat == "Bread" ? (
-         <div className="ingred">
+         <div>
           <h4>{cat}</h4>
           {this.state.categories[cat].map((ing) => (
             <label>{ing.name}
@@ -123,7 +124,7 @@ class Create extends React.Component {
             </label>
           ))}
         </div> ) : (
-        <div className="ingred">
+        <div>
           <h4>{cat}</h4>
           {this.state.categories[cat].map((ing) => (
             <label>{ing.name}

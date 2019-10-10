@@ -11,15 +11,7 @@ class Menu extends React.Component{
   state = {
     showMenu:[],
     hidden: true,
-    name: ""
-  }
-
-  componentDidMount = async () => {
-    console.log('im here');
-    // const menu = this.props.showMenu();
-    // this.setState({
-    //   showMenu: menu
-    // })
+    name: "",
   }
 
   isHidden = (e) => {
@@ -31,9 +23,9 @@ class Menu extends React.Component{
     )
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = (e, id) => {
     e.preventDefault()
-    this.props.handleEdit(this.state.name);
+    this.props.handleEdit(id, this.state.name);
     this.setState({
       hidden:true
     })
@@ -42,28 +34,31 @@ class Menu extends React.Component{
  handleNameChange = (e) => {
    const {value} = e.target
    this.setState(prevState => ({
-    edited: value
+    name: value
    }))
  }
 
   render(){
-
-    console.log(this.props)
   const subs = this.props.getMenu.map((sub) => {
-    return <form key={sub.id}>
-        <label>
-        {sub.name}
-          <input
-            type="number"
-            min="1"
-            max="5"
-          />
-        </label>
-        <button onClick={this.isHidden}>Edit Name</button>
-        <input type="text" className={this.state.hidden ? 'hidden' : ''} onChange={this.handleNameChange}/>
-        <button className={this.state.hidden ? 'hidden' : ''} onClick={this.handleSubmit}>Submit Name Change</button>
-        <button onClick={(e) => this.props.handleDelete(e, sub.id)}>Delete</button>
-      </form>
+    return <div className="menuItem">
+      <img src={sub.photo} className="menuPhoto" />
+      <form key={sub.id}>
+          <label>
+          {sub.name}
+            <input
+              type="number"
+              min="1"
+              max="5"
+            />
+          </label>
+          <div className={sub.id > 9 ? null: 'hidden' }>
+            <button onClick={this.isHidden}>Edit Name</button>
+            <input type="text" className={this.state.hidden ? 'hidden' : ''} onChange={this.handleNameChange}/>
+            <button className={this.state.hidden ? 'hidden' : ''} onClick={(e) =>this.handleSubmit(e, sub.id)}>Submit Name Change</button>
+            <button onClick={(e) => this.props.handleDelete(e, sub.id)}>Delete</button>
+          </div>
+        </form>
+      </div>
   })
 
 

@@ -65,7 +65,7 @@ export const deleteSand = async (id) => {
 
 export const editSand = async (id, sandData) => {
   try {
-    const edited = await api.put(`/sandwiches/${id}`, sandData);
+    const edited = await api.put(`/sandwiches/${id}`,{sandwich: {name: sandData}});
     return edited.data;
   } catch (e) {
     console.log(e.message);

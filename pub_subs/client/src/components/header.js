@@ -4,7 +4,10 @@ import {Link} from 'react-router-dom'
 const Header = (props) => {
   return (
     <div className="header">
-      <Link to="/home"><h1>Pub Subs</h1></Link>
+     <div className="flogo">
+      <Link to="/home" className="logo"><img src="https://cutpcdnwimages.azureedge.net/-/media/images/publix/publix_brandmark.svg?h=50&w=50&la=en&hash=1E0E8ECA9D5C03DA3FE5FE56151B481583A4812F"/></Link>
+      <h1>ub Subs</h1>
+     </div>
       {props.currentUser ? (
         <Link><button onClick={props.handleLogout}>Logout</button></Link>
       ):(

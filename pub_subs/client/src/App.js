@@ -94,8 +94,8 @@ class App extends React.Component {
      })
    }
 
-   handleEdit = async (sandData) => {
-     const edited = await editSand(sandData);
+   handleEdit = async (id, sandData) => {
+     const edited = await editSand(id, sandData);
    }
 
 
