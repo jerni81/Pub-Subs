@@ -57,13 +57,23 @@
   height: 80vh;
 }
 
+.ingredi {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.8);
+}
+
 .ingred {
   margin: 10px;
-  background: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
+}
+
+.indiv {
+  margin: 10px;
 }
 
 .login {

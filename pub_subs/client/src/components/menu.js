@@ -1,11 +1,12 @@
 import React from 'react'
-
+import {showMenu} from '../services/api-helper'
 class Menu extends React.Component{
 
   state = {
-    showMenu:[],
+    getMenu: [],
     hidden: true,
     name: "",
+    menuData: []
   }
 
   isHidden = (e) => {
@@ -37,7 +38,7 @@ class Menu extends React.Component{
     return <div className="menuItem">
       <img src={sub.photo} className="menuPhoto" alt="   Picture this... we're making your sandwich right now!!"/>
       <form key={sub.id}>
-          <label>
+          <label className="indiv">
           {sub.name}
             <input
               type="number"

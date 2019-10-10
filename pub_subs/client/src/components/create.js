@@ -1,10 +1,12 @@
 import React from 'react'
+import {showIngred} from '../services/api-helper'
 import {Redirect} from 'react-router-dom'
 
 
 class Create extends React.Component {
 
   state = {
+    ingredData: [],
     categories: {
       Bread: [],
       Meat: [],
@@ -16,12 +18,17 @@ class Create extends React.Component {
       name: "",
       ingredients: []
     },
-    redirect:false
+    redirect:false,
+    update: false
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.getIngred !== this.props.getIngred) {
-      this.props.getIngred.forEach((ing) => {
+  componentDidMount = async () => {
+    // if (prevProps.getIngred !== this.props.getIngred) {
+    const ingredients = await showIngred();
+    this.setState({
+      ingredData: ingredients
+    })
+      this.state.ingredData.forEach((ing) => {
         this.setState(prevState => ({
           categories: {
             ...prevState.categories,
@@ -32,11 +39,8 @@ class Create extends React.Component {
           }
         }))
       })
-    }
+    // }
   }
-
-
-
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -102,35 +106,47 @@ class Create extends React.Component {
   }))
  }
 
+ updateState = () => {
+   if (this.state.update == false)
+   this.setState({
+     update: true
+   })
+ }
+
   render() {
+    this.updateState()
     let redirect = this.state.redirect && <Redirect to={"/menu"}/>
     const ingredients = Object.keys(this.state.categories).map((cat, i) => {
       return <div key={i} id={cat} className="inForm">
        { cat === "Bread" ? (
-         <div className="ingred" >
+         <div className="ingredi" >
           <h4>{cat}</h4>
-          {this.state.categories[cat].map((ing) => (
-            <label>{ing.name}
-              <input
-                type="radio"
-                name={cat}
-                id={ing.name}
-                onChange={() => this.handleIngredientRadioChange(ing)}
-              />
-            </label>
-          ))}
+          <div className="ingred">
+            {this.state.categories[cat].map((ing) => (
+              <label className="indiv">{ing.name}
+                <input
+                  type="radio"
+                  name={cat}
+                  id={ing.name}
+                  onChange={() => this.handleIngredientRadioChange(ing)}
+                />
+              </label>
+            ))}
+            </div>
         </div> ) : (
-        <div className="ingred">
+        <div className="ingredi">
           <h4>{cat}</h4>
-          {this.state.categories[cat].map((ing) => (
-            <label>{ing.name}
-              <input
-                type="checkbox"
-                name={ing.name}
-                onChange={(e) => this.handleIngredientCheckboxChange(e, ing)}
-              />
-            </label>
-          ))}
+          <div className="ingred">
+            {this.state.categories[cat].map((ing) => (
+              <label className="indiv">{ing.name}
+                <input
+                  type="checkbox"
+                  name={ing.name}
+                  onChange={(e) => this.handleIngredientCheckboxChange(e, ing)}
+                />
+              </label>
+            ))}
+          </div>
         </div>
       )}
       </div>

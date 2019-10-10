@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/header'
 import Main from './components/main'
 import { loginUser, registerUser, verifyUser, showMenu, showIngred, newSand, deleteSand, editSand } from './services/api-helper'
+import {withRouter} from 'react-router-dom'
 
 class App extends React.Component {
   state={
@@ -11,8 +12,7 @@ class App extends React.Component {
       password: ''
     },
     currentUser: null,
-    menuData: [],
-    ingredData: []
+    menuData: []
   }
 
   //==================================
@@ -23,6 +23,7 @@ class App extends React.Component {
     e.preventDefault();
     const currentUser = await loginUser(this.state.authFormData);
     this.setState({currentUser});
+    this.props.history.push('/home')
   }
 
   handleRegister = async (e) => {
@@ -31,6 +32,7 @@ class App extends React.Component {
     console.log(this.state.authFormData);
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({currentUser});
+    this.props.history.push('/home')
   }
 
   handleLogout = () => {
@@ -68,10 +70,6 @@ class App extends React.Component {
       this.setState({
         menuData: menu
       })
-      const ingredients = await showIngred();
-      this.setState({
-        ingredData: ingredients
-      })
    }
 
    handleNew = async (sandData) => {
@@ -84,10 +82,12 @@ class App extends React.Component {
      console.log('im here', id);
      await deleteSand(id);
      const menu = await showMenu();
+     console.log(menu)
      console.log('this is menu', menu)
      this.setState({
        menuData: menu
      })
+
    }
 
    handleEdit = async (id, sandData) => {
@@ -121,4 +121,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

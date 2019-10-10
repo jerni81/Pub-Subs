@@ -4,7 +4,7 @@ import React from 'react'
 const Footer = (props) => {
   return (
     <div className="footer">
-      <h1>Pub Subs</h1>
+      &copy; A.J. Software Engineering
     </div>
   )
 }
