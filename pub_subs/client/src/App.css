@@ -54,7 +54,8 @@
 }
 
 .ingred {
-  border: 1px solid black;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -87,12 +88,10 @@
 }
 
 .menuPhoto {
-  height: 200px;
-  width: 200px;
+  width: 28vw;
 }
 
 .create form {
-  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -103,56 +102,71 @@
   align-self: center;
 }
 
-.Bread {
-  height: 60vh;
+.inForm {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#Bread {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
   width: 80vw;
-  margin: 0 auto;
   background-image: url("https://cutpcdnwimages.azureedge.net/images/products/15000/016964-600x600-A.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.Meat {
-  height: 30vh;
+#Meat {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
   width: 80vw;
-  margin: 0 auto;
   background-image: url("https://cutpcdnwimages.azureedge.net/images/products/95000/097178-600x600-A.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.Veggies {
-  height: 30vh;
+#Veggies {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
   width: 80vw;
-  margin: 0 auto;
   background-image: url("https://cutpcdnwimages.azureedge.net/images/products/90000/091045-600x600-A.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.Condiments {
-  height: 30vh;
+#Condiments {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
   width: 80vw;
-  margin: 0 auto;
   background-image: url("https://cutpcdnwimages.azureedge.net/images/products/95000/097896-600x600-A.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-.Cheese {
-  height: 30vh;
+#Cheese {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
   width: 80vw;
-  margin: 0 auto;
   background-image: url("https://cutpcdnwimages.azureedge.net/images/products/95000/099280-600x600-A.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-
-
 
 .hidden {
   display: none;
@@ -161,4 +175,12 @@
 #text {
   width: 20vw;
   align-self: center;
+}
+
+@media only screen and (max-width: 1000px){
+
+}
+
+@media only screen and (max-width: 600px){
+
 }

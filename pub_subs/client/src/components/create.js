@@ -109,9 +109,9 @@ class Create extends React.Component {
     let redirect = this.state.redirect && <Redirect to={"/menu"}/>
     console.log(this.props)
     const ingredients = Object.keys(this.state.categories).map((cat) => {
-      return <div className={cat}>
+      return <div id={cat} className="inForm">
        { cat == "Bread" ? (
-         <div>
+         <div className="ingred">
           <h4>{cat}</h4>
           {this.state.categories[cat].map((ing) => (
             <label>{ing.name}
@@ -124,7 +124,7 @@ class Create extends React.Component {
             </label>
           ))}
         </div> ) : (
-        <div>
+        <div className="ingred">
           <h4>{cat}</h4>
           {this.state.categories[cat].map((ing) => (
             <label>{ing.name}
@@ -144,9 +144,9 @@ class Create extends React.Component {
         {redirect}
         <form onSubmit={this.handleSubmit}>
           Name Your Sandwich <br/>
-          <input type="text" name="text" id="text" onChange={this.handleNameChange}/>
-          {ingredients}
-          <button>Create Sandwich</button>
+          <input type="text" name="text" id="text" onChange={this.handleNameChange} className="inForm" />
+          <div className="inForm">{ingredients}</div>
+          <button className="inForm">Create Sandwich</button>
         </form>
       </div>
     )
