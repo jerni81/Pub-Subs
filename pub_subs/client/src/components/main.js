@@ -33,12 +33,15 @@ const Main = (props) => {
       <Menu
         getMenu={props.getMenu}
         handleDelete={props.handleDelete}
+        handleEdit={props.handleEdit}
+        showMenu={props.showMenu}
       />
     )} />
     <Route path='/create' render={()=>(
       <Create
         getIngred={props.getIngred}
         makeNew={props.makeNew}
+        showMenu={props.showMenu}
       />
     )} />
     <Footer />

@@ -76,6 +76,10 @@
   align-self: center;
 }
 
+.hidden {
+  display: none;
+}
+
 #text {
   width: 20vw;
   align-self: center;

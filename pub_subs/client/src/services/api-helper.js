@@ -63,9 +63,9 @@ export const deleteSand = async (id) => {
   }
 }
 
-export const editSand = async (id) => {
+export const editSand = async (id, sandData) => {
   try {
-    const edited = await api.put(`/sandwiches/${id}`);
+    const edited = await api.put(`/sandwiches/${id}`, sandData);
     return edited.data;
   } catch (e) {
     console.log(e.message);
