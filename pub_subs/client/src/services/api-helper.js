@@ -54,9 +54,9 @@ export const newSand = async (sandData) => {
   }
 }
 
-export const deleteSand = async (sandData) => {
+export const deleteSand = async (id) => {
   try {
-    const deleted = await api.delete('/sandwiches/:id', sandData);
+    const deleted = await api.delete(`/sandwiches/${id}`);
     return deleted.data;
   } catch (e) {
     console.log(e.message);
