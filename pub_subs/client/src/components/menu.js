@@ -1,12 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-
 
 class Menu extends React.Component{
-
-  constructor(props){
-    super(props)
-  }
 
   state = {
     showMenu:[],
@@ -41,7 +35,7 @@ class Menu extends React.Component{
   render(){
   const subs = this.props.getMenu.map((sub) => {
     return <div className="menuItem">
-      <img src={sub.photo} className="menuPhoto" />
+      <img src={sub.photo} className="menuPhoto" alt="   Picture this... we're making your sandwich right now!!"/>
       <form key={sub.id}>
           <label>
           {sub.name}

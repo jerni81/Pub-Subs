@@ -14,6 +14,10 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.header button {
+  margin: 10px;
+}
+
 .footer {
   justify-content: center;
   align-items: center;
@@ -59,6 +63,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
 }
 
 .login {
@@ -83,12 +88,13 @@
 }
 
 .menuItem {
+  width: 28vw;
   border: 1px solid rgb(107, 115, 124);
   margin: 5px;
 }
 
 .menuPhoto {
-  width: 28vw;
+width: 100%;
 }
 
 .create form {
@@ -177,10 +183,20 @@
   align-self: center;
 }
 
-@media only screen and (max-width: 1000px){
-
+@media only screen and (max-width: 740px){
+  .menuItem {
+    width: 45vw;
+    border: 1px solid rgb(107, 115, 124);
+    margin: 5px;
+  }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 570px){
 
+  .menuItem {
+    width: 80vw;
+    /* height: 50%; */
+    border: 1px solid rgb(107, 115, 124);
+    margin: 5px;
+  }
 }

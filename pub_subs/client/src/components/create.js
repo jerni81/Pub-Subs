@@ -1,11 +1,8 @@
 import React from 'react'
-import {Link, Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 
 class Create extends React.Component {
-  constructor(props){
-    super(props)
-  }
 
   state = {
     categories: {
@@ -107,11 +104,10 @@ class Create extends React.Component {
 
   render() {
     let redirect = this.state.redirect && <Redirect to={"/menu"}/>
-    console.log(this.props)
-    const ingredients = Object.keys(this.state.categories).map((cat) => {
-      return <div id={cat} className="inForm">
-       { cat == "Bread" ? (
-         <div className="ingred">
+    const ingredients = Object.keys(this.state.categories).map((cat, i) => {
+      return <div key={i} id={cat} className="inForm">
+       { cat === "Bread" ? (
+         <div className="ingred" >
           <h4>{cat}</h4>
           {this.state.categories[cat].map((ing) => (
             <label>{ing.name}

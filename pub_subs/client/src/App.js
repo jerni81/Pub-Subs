@@ -1,10 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
 import Header from './components/header'
 import Main from './components/main'
-import Footer from './components/footer'
 import { loginUser, registerUser, verifyUser, showMenu, showIngred, newSand, deleteSand, editSand } from './services/api-helper'
-import { Redirect } from 'react-router'
 
 class App extends React.Component {
   state={
@@ -67,12 +65,10 @@ class App extends React.Component {
    componentDidMount = async () => {
      this.handleVerify()
       const menu = await showMenu();
-      console.log('this is menu', menu)
       this.setState({
         menuData: menu
       })
       const ingredients = await showIngred();
-      console.log('this is menu', ingredients)
       this.setState({
         ingredData: ingredients
       })
@@ -95,7 +91,7 @@ class App extends React.Component {
    }
 
    handleEdit = async (id, sandData) => {
-     const edited = await editSand(id, sandData);
+     await editSand(id, sandData);
    }
 
 
