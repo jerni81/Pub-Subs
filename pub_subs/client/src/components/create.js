@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 
 
 class Create extends React.Component {
@@ -17,7 +17,8 @@ class Create extends React.Component {
     newSandwich: {
       name: "",
       ingredients: []
-    }
+    },
+    redirect:false
   }
 
   componentDidUpdate(prevProps) {
@@ -41,7 +42,11 @@ class Create extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.makeNew(this.state.newSandwich)  
+    this.props.makeNew(this.state.newSandwich);
+    // this.props.showMenu();
+    this.setState({
+      redirect:true
+    })
   }
 
  handleNameChange = (e) => {
@@ -100,6 +105,8 @@ class Create extends React.Component {
  }
 
   render() {
+    let redirect = this.state.redirect && <Redirect to={"/menu"}/>
+    console.log(this.props)
     const ingredients = Object.keys(this.state.categories).map((cat) => {
       return <div>
        { cat == "Bread" ? (
@@ -133,6 +140,7 @@ class Create extends React.Component {
     })
     return (
       <div className="create">
+        {redirect}
         <form onSubmit={this.handleSubmit}>
           Name Your Sandwich <br/>
           <input type="text" name="text" id="text" onChange={this.handleNameChange}/>

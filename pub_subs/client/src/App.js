@@ -79,11 +79,19 @@ class App extends React.Component {
    }
 
    handleNew = async (sandData) => {
-     const newSandwich = await newSand(sandData);
+     await newSand(sandData);
    }
 
-   handleDelete = async (sandData) => {
-     const deleted = await deleteSand(sandData);
+   handleDelete = async (e, id) => {
+     e.preventDefault()
+
+     console.log('im here', id);
+     await deleteSand(id);
+     const menu = await showMenu();
+     console.log('this is menu', menu)
+     this.setState({
+       menuData: menu
+     })
    }
 
 
@@ -103,7 +111,8 @@ class App extends React.Component {
           getMenu={this.state.menuData}
           getIngred={this.state.ingredData}
           makeNew={this.handleNew}
-          delete={this.handleDelete}
+          handleDelete={this.handleDelete}
+          showMenu={showMenu}
         />
 
 
