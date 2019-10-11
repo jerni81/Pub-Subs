@@ -104,7 +104,7 @@
 }
 
 .menuPhoto {
-width: 100%;
+  width: 100%;
 }
 
 .create form {
@@ -193,7 +193,7 @@ width: 100%;
   align-self: center;
 }
 
-@media only screen and (max-width: 740px){
+@media only screen and (max-width: 740px) {
   .menuItem {
     width: 45vw;
     border: 1px solid rgb(107, 115, 124);
@@ -201,8 +201,7 @@ width: 100%;
   }
 }
 
-@media only screen and (max-width: 570px){
-
+@media only screen and (max-width: 570px) {
   .home {
     display: flex;
     flex-direction: column;

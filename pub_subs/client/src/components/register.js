@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const Register = (props) => {
-  const {email, password} = props.authFormData
+const Register = props => {
+  const { email, password } = props.authFormData;
   return (
     <div className="register">
       <h2>Register</h2>
@@ -20,9 +20,8 @@ const Register = (props) => {
         />
         <button>Register</button>
       </form>
-
     </div>
-  )
-}
+  );
+};
 
 export default Register;

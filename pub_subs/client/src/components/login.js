@@ -1,8 +1,8 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Login = (props) => {
-  const {email, password} = props.authFormData
+const Login = props => {
+  const { email, password } = props.authFormData;
   return (
     <div className="login">
       <h2>Login</h2>
@@ -21,14 +21,13 @@ const Login = (props) => {
         />
         <button>Login</button>
         <h6>
-        If you don't have a Login, then
-        <Link to='/register'> Register </Link>
-        here!
+          If you don't have a Login, then
+          <Link to="/register"> Register </Link>
+          here!
         </h6>
       </form>
-
     </div>
-  )
-}
+  );
+};
 
 export default Login;
