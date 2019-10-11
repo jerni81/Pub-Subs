@@ -16596,3 +16596,80 @@ Processing by SandwichesController#index as HTML
 Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1991)
 
 
+Started POST "/users" for ::1 at 2019-10-11 11:04:55 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"andrew@andrew.org", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "andrew@andrew.org"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "andrew@andrew.org"], ["password_digest", "$2a$12$C3M4HN4fqwvQRRsgPt3zq.FTz1zFS1xxcZFlyTTVROw/ykE03VGVi"], ["created_at", "2019-10-11 15:04:55.735414"], ["updated_at", "2019-10-11 15:04:55.735414"]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 200 OK in 253ms (Views: 0.3ms | ActiveRecord: 4.5ms | Allocations: 3512)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-11 11:05:20 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 1.4ms | Allocations: 4652)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-11 11:06:08 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"andrews sandy", "ingredients"=>[{"id"=>1, "name"=>"White", "category"=>"Bread", "created_at"=>"2019-10-11T13:21:21.045Z", "updated_at"=>"2019-10-11T13:21:21.045Z"}, {"id"=>11, "name"=>"Chicken Tenders", "category"=>"Meat", "created_at"=>"2019-10-11T13:21:21.085Z", "updated_at"=>"2019-10-11T13:21:21.085Z"}, {"id"=>8, "name"=>"Turkey", "category"=>"Meat", "created_at"=>"2019-10-11T13:21:21.072Z", "updated_at"=>"2019-10-11T13:21:21.072Z"}, {"id"=>7, "name"=>"Ham", "category"=>"Meat", "created_at"=>"2019-10-11T13:21:21.069Z", "updated_at"=>"2019-10-11T13:21:21.069Z"}, {"id"=>14, "name"=>"Tomato", "category"=>"Veggies", "created_at"=>"2019-10-11T13:21:21.096Z", "updated_at"=>"2019-10-11T13:21:21.096Z"}, {"id"=>15, "name"=>"Lettuce", "category"=>"Veggies", "created_at"=>"2019-10-11T13:21:21.107Z", "updated_at"=>"2019-10-11T13:21:21.107Z"}, {"id"=>16, "name"=>"Onions", "category"=>"Veggies", "created_at"=>"2019-10-11T13:21:21.110Z", "updated_at"=>"2019-10-11T13:21:21.110Z"}, {"id"=>17, "name"=>"Peppers", "category"=>"Veggies", "created_at"=>"2019-10-11T13:21:21.114Z", "updated_at"=>"2019-10-11T13:21:21.114Z"}, {"id"=>18, "name"=>"Olives", "category"=>"Veggies", "created_at"=>"2019-10-11T13:21:21.118Z", "updated_at"=>"2019-10-11T13:21:21.118Z"}, {"id"=>19, "name"=>"Cucumbers", "category"=>"Veggies", "created_at"=>"2019-10-11T13:21:21.122Z", "updated_at"=>"2019-10-11T13:21:21.122Z"}, {"id"=>20, "name"=>"Pickles", "category"=>"Veggies", "created_at"=>"2019-10-11T13:21:21.126Z", "updated_at"=>"2019-10-11T13:21:21.126Z"}, {"id"=>23, "name"=>"Spicy Mustard", "category"=>"Condiments", "created_at"=>"2019-10-11T13:21:21.139Z", "updated_at"=>"2019-10-11T13:21:21.139Z"}, {"id"=>25, "name"=>"Oil", "category"=>"Condiments", "created_at"=>"2019-10-11T13:21:21.150Z", "updated_at"=>"2019-10-11T13:21:21.150Z"}, {"id"=>26, "name"=>"Vinegar", "category"=>"Condiments", "created_at"=>"2019-10-11T13:21:21.154Z", "updated_at"=>"2019-10-11T13:21:21.154Z"}, {"id"=>27, "name"=>"Salt", "category"=>"Condiments", "created_at"=>"2019-10-11T13:21:21.157Z", "updated_at"=>"2019-10-11T13:21:21.157Z"}, {"id"=>28, "name"=>"Pepper", "category"=>"Condiments", "created_at"=>"2019-10-11T13:21:21.167Z", "updated_at"=>"2019-10-11T13:21:21.167Z"}, {"id"=>30, "name"=>"Provolone", "category"=>"Cheese", "created_at"=>"2019-10-11T13:21:21.174Z", "updated_at"=>"2019-10-11T13:21:21.174Z"}, {"id"=>32, "name"=>"White Cheddar", "category"=>"Cheese", "created_at"=>"2019-10-11T13:21:21.182Z", "updated_at"=>"2019-10-11T13:21:21.182Z"}], "sandwich"=>{"name"=>"andrews sandy"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (1.1ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "andrews sandy"], ["created_at", "2019-10-11 15:06:08.760573"], ["updated_at", "2019-10-11 15:06:08.760573"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 9ms (Views: 0.7ms | ActiveRecord: 2.5ms | Allocations: 2496)
+
+
+Started PUT "/sandwiches/14" for ::1 at 2019-10-11 11:06:33 -0400
+Processing by SandwichesController#update as HTML
+  Parameters: {"sandwich"=>{"name"=>"a holes sandy"}, "id"=>"14"}
+  [1m[36mSandwich Load (0.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+  [1m[36mSandwich Update (0.4ms)[0m  [1m[33mUPDATE "sandwiches" SET "name" = $1, "updated_at" = $2 WHERE "sandwiches"."id" = $3[0m  [["name", "a holes sandy"], ["updated_at", "2019-10-11 15:06:33.734037"], ["id", 14]]
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 2.4ms | Allocations: 2902)
+
+
+Started DELETE "/sandwiches/14" for ::1 at 2019-10-11 11:06:42 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.5ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 14]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (0.5ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 2.0ms | Allocations: 2918)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-11 11:06:42 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1991)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-11 11:07:05 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.5ms | Allocations: 4610)
+
+
