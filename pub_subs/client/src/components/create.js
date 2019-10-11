@@ -115,7 +115,20 @@ class Create extends React.Component {
 
   render() {
     this.updateState()
-    let redirect = this.state.redirect && <Redirect to={"/menu"}/>
+    let redirect = this.state.redirect &&
+    <Redirect
+    to={{
+      pathname: '/menu',
+
+        redirectProp: true
+
+    }}/>
+
+
+
+
+
+
     const ingredients = Object.keys(this.state.categories).map((cat, i) => {
       return <div key={i} id={cat} className="inForm">
        { cat === "Bread" ? (

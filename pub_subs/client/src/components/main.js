@@ -31,6 +31,7 @@ const Main = (props) => {
     )} />
     <Route path='/menu' render={()=>(
       <Menu
+        {...props}
         getMenu={props.getMenu}
         handleDelete={props.handleDelete}
         handleEdit={props.handleEdit}

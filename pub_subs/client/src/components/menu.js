@@ -34,7 +34,9 @@ class Menu extends React.Component{
  }
 
   render(){
-  const subs = this.props.getMenu.map((sub) => {
+    console.log(this.props)
+    let data = this.props.getMenu  ?  this.props.getMenu : this.state.showMenu
+  const subs = data.map((sub) => {
     return <div className="menuItem">
       <img src={sub.photo} className="menuPhoto" alt="   Picture this... we're making your sandwich right now!!"/>
       <form key={sub.id}>

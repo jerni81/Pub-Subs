@@ -203,6 +203,11 @@ width: 100%;
 
 @media only screen and (max-width: 570px){
 
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+
   .menuItem {
     width: 80vw;
     /* height: 50%; */

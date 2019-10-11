@@ -15236,3 +15236,977 @@ Processing by SandwichesController#index as HTML
 Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1991)
 
 
+Started GET "/auth/verify" for ::1 at 2019-10-10 18:59:07 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-10 18:59:07 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 2093)
+
+
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (1.9ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.9ms | Allocations: 2099)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-10 18:59:30 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.9ms | Allocations: 4842)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-10 18:59:35 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"good sandwich", "ingredients"=>[], "sandwich"=>{"name"=>"good sandwich"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (10.5ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "good sandwich"], ["created_at", "2019-10-10 22:59:35.097001"], ["updated_at", "2019-10-10 22:59:35.097001"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 21ms (Views: 0.6ms | ActiveRecord: 13.2ms | Allocations: 2356)
+
+
+Started GET "/auth/verify" for ::1 at 2019-10-10 18:59:44 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-10 18:59:44 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by SandwichesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mSandwich Load (13.9ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+Filter chain halted as :authorize_request rendered or redirected
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 401 Unauthorized in 20ms (Views: 0.5ms | ActiveRecord: 1.5ms | Allocations: 1660)
+
+
+Completed 200 OK in 23ms (Views: 8.9ms | ActiveRecord: 13.9ms | Allocations: 2721)
+
+
+Started GET "/auth/verify" for ::1 at 2019-10-10 19:03:48 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:03:48 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (5.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 5.4ms | Allocations: 2546)
+
+
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 0.2ms | ActiveRecord: 6.7ms | Allocations: 3064)
+
+
+Started GET "/auth/verify" for ::1 at 2019-10-10 19:08:15 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (25.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 28ms (Views: 0.2ms | ActiveRecord: 25.5ms | Allocations: 722)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:08:15 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 2116)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-10 19:08:29 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.9ms | Allocations: 4842)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-10 19:08:34 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"good sandwich", "ingredients"=>[], "sandwich"=>{"name"=>"good sandwich"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (1.0ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "good sandwich"], ["created_at", "2019-10-10 23:08:34.973607"], ["updated_at", "2019-10-10 23:08:34.973607"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 12ms (Views: 1.7ms | ActiveRecord: 2.7ms | Allocations: 2352)
+
+
+Started DELETE "/sandwiches/15" for ::1 at 2019-10-10 19:08:44 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mSandwich Load (0.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.7ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 15]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (1.4ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 16ms (ActiveRecord: 4.2ms | Allocations: 2921)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:08:44 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 2116)
+
+
+Started DELETE "/sandwiches/16" for ::1 at 2019-10-10 19:08:45 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mSandwich Load (0.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.5ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 16]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 2.8ms | Allocations: 2918)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:08:45 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 1991)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-10 19:08:51 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (3.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 3.5ms | Allocations: 4842)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-10 19:08:56 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"good sandwich", "ingredients"=>[], "sandwich"=>{"name"=>"good sandwich"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (0.8ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "good sandwich"], ["created_at", "2019-10-10 23:08:56.993250"], ["updated_at", "2019-10-10 23:08:56.993250"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 10ms (Views: 1.4ms | ActiveRecord: 2.3ms | Allocations: 2352)
+
+
+Started GET "/auth/verify" for ::1 at 2019-10-10 19:09:28 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:09:28 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by SandwichesController#index as HTML
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 17ms (Views: 0.2ms | ActiveRecord: 14.0ms | Allocations: 1387)
+
+
+  [1m[36mSandwich Load (166.1ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 179ms (Views: 12.0ms | ActiveRecord: 166.1ms | Allocations: 2853)
+
+
+Started GET "/auth/verify" for ::1 at 2019-10-10 19:10:32 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:10:32 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 722)
+
+
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (1.1ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 1.1ms | Allocations: 2116)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-10 19:10:43 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 4842)
+
+
+Started DELETE "/sandwiches/17" for ::1 at 2019-10-10 19:10:58 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mSandwich Load (0.5ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.3ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 17]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 2.5ms | Allocations: 2918)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:10:58 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (1.1ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 1.1ms | Allocations: 1991)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-10 19:11:02 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (4.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 4.2ms | Allocations: 4842)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-10 19:11:06 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"yep", "ingredients"=>[], "sandwich"=>{"name"=>"yep"}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (0.8ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "yep"], ["created_at", "2019-10-10 23:11:06.840724"], ["updated_at", "2019-10-10 23:11:06.840724"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 9ms (Views: 0.7ms | ActiveRecord: 2.6ms | Allocations: 2352)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:13:12 -0400
+Started GET "/auth/verify" for ::1 at 2019-10-10 19:13:12 -0400
+Processing by SandwichesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mSandwich Load (5.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 5.3ms | Allocations: 2277)
+
+
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 12ms (Views: 0.4ms | ActiveRecord: 8.5ms | Allocations: 2953)
+
+
+Started GET "/auth/verify" for ::1 at 2019-10-10 19:13:37 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 0.2ms | ActiveRecord: 10.2ms | Allocations: 722)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:13:37 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.5ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 2116)
+
+
+Started GET "/auth/verify" for ::1 at 2019-10-10 19:13:47 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-10 19:13:47 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (18.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 22ms (Views: 0.3ms | ActiveRecord: 18.7ms | Allocations: 722)
+
+
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (44.5ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 51ms (Views: 5.6ms | ActiveRecord: 44.5ms | Allocations: 2116)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-10 19:13:52 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.7ms | Allocations: 4842)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-10 19:13:59 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"good sandwich", "ingredients"=>[], "sandwich"=>{"name"=>"good sandwich"}}
+  [1m[35m (7.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (0.7ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "good sandwich"], ["created_at", "2019-10-10 23:13:59.280379"], ["updated_at", "2019-10-10 23:13:59.280379"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 22ms (Views: 2.7ms | ActiveRecord: 12.6ms | Allocations: 2355)
+
+
+Started DELETE "/sandwiches/18" for ::1 at 2019-10-10 20:24:32 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mSandwich Load (0.5ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 18]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (0.4ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (42.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 50ms (ActiveRecord: 43.6ms | Allocations: 2918)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-10 20:24:32 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2116)
+
+
+Started DELETE "/sandwiches/19" for ::1 at 2019-10-10 20:24:33 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mSandwich Load (0.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.3ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 19]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (0.4ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 19]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 2.6ms | Allocations: 2918)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-10 20:24:33 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1991)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-10 20:24:58 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (1.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 1.8ms | Allocations: 4842)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-10 20:25:10 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"", "ingredients"=>[{"id"=>4, "name"=>"Pumpernickle", "category"=>"Bread", "created_at"=>"2019-10-10T22:42:18.902Z", "updated_at"=>"2019-10-10T22:42:18.902Z"}, {"id"=>12, "name"=>"Chicken Tenders", "category"=>"Meat", "created_at"=>"2019-10-10T22:42:18.932Z", "updated_at"=>"2019-10-10T22:42:18.932Z"}, {"id"=>21, "name"=>"Cucumbers", "category"=>"Veggies", "created_at"=>"2019-10-10T22:42:18.974Z", "updated_at"=>"2019-10-10T22:42:18.974Z"}], "sandwich"=>{"name"=>""}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (1.3ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2019-10-11 00:25:10.338500"], ["updated_at", "2019-10-11 00:25:10.338500"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 11ms (Views: 0.8ms | ActiveRecord: 4.3ms | Allocations: 2376)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-10 20:25:13 -0400
+Started GET "/auth/verify" for ::1 at 2019-10-10 20:25:13 -0400
+Processing by SandwichesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSandwich Load (7.1ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 7.1ms | Allocations: 3410)
+
+
+Completed 401 Unauthorized in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 2777)
+
+
+Started PUT "/sandwiches/20" for ::1 at 2019-10-10 20:25:30 -0400
+Processing by SandwichesController#update as HTML
+  Parameters: {"sandwich"=>{"name"=>"tays"}, "id"=>"20"}
+  [1m[36mSandwich Load (0.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+  [1m[36mSandwich Update (0.6ms)[0m  [1m[33mUPDATE "sandwiches" SET "name" = $1, "updated_at" = $2 WHERE "sandwiches"."id" = $3[0m  [["name", "tays"], ["updated_at", "2019-10-11 00:25:30.294462"], ["id", 20]]
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 2946)
+
+
+Started GET "/auth/verify" for ::1 at 2019-10-10 20:25:33 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-10 20:25:33 -0400
+Processing by SandwichesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mSandwich Load (1.2ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 1.2ms | Allocations: 2836)
+
+
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 0.2ms | ActiveRecord: 4.9ms | Allocations: 2937)
+
+
+Started PUT "/sandwiches/20" for ::1 at 2019-10-10 20:25:46 -0400
+Processing by SandwichesController#update as HTML
+  Parameters: {"sandwich"=>{"name"=>"drunk as fuhhhh"}, "id"=>"20"}
+  [1m[36mSandwich Load (0.5ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+  [1m[36mSandwich Update (0.8ms)[0m  [1m[33mUPDATE "sandwiches" SET "name" = $1, "updated_at" = $2 WHERE "sandwiches"."id" = $3[0m  [["name", "drunk as fuhhhh"], ["updated_at", "2019-10-11 00:25:46.155301"], ["id", 20]]
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.7ms | Allocations: 2873)
+
+
+Started GET "/auth/verify" for ::1 at 2019-10-10 20:25:48 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-10 20:25:48 -0400
+Processing by SandwichesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mSandwich Load (3.6ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 3.6ms | Allocations: 2280)
+
+
+  [1m[36mUser Load (58.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 63ms (Views: 0.7ms | ActiveRecord: 58.7ms | Allocations: 2936)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-11 09:14:35 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (42.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 52ms (Views: 8.2ms | ActiveRecord: 42.8ms | Allocations: 4903)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-11 09:15:05 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"", "ingredients"=>[], "sandwich"=>{"name"=>""}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (43.7ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2019-10-11 13:15:05.838715"], ["updated_at", "2019-10-11 13:15:05.838715"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 55ms (Views: 0.5ms | ActiveRecord: 45.1ms | Allocations: 2354)
+
+
+Started DELETE "/sandwiches/20" for ::1 at 2019-10-11 09:15:12 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mSandwich Load (0.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.9ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 20]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (1.7ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 20]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 3.7ms | Allocations: 2944)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-11 09:15:12 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 2116)
+
+
+Started DELETE "/sandwiches/21" for ::1 at 2019-10-11 09:15:15 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.6ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 21]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 21]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 2.7ms | Allocations: 2918)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-11 09:15:15 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.5ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 1991)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-11 09:15:18 -0400
+Started GET "/auth/verify" for ::1 at 2019-10-11 09:15:18 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (9.1ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 5.7ms | ActiveRecord: 9.1ms | Allocations: 1991)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 807)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-11 09:15:59 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.9ms | Allocations: 4844)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-11 09:16:04 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"good sandwich", "ingredients"=>[], "sandwich"=>{"name"=>"good sandwich"}}
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (3.2ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "good sandwich"], ["created_at", "2019-10-11 13:16:04.495513"], ["updated_at", "2019-10-11 13:16:04.495513"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 17ms (Views: 0.7ms | ActiveRecord: 8.8ms | Allocations: 2353)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-11 09:16:09 -0400
+Started GET "/auth/verify" for ::1 at 2019-10-11 09:16:09 -0400
+Processing by SandwichesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mSandwich Load (7.6ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 16.8ms | ActiveRecord: 7.6ms | Allocations: 2851)
+
+
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 24ms (Views: 0.2ms | ActiveRecord: 15.2ms | Allocations: 2913)
+
+
+Started DELETE "/sandwiches/22" for ::1 at 2019-10-11 09:16:15 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mSandwich Load (0.2ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.5ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 22]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 22]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 6ms (ActiveRecord: 2.4ms | Allocations: 2921)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-11 09:16:15 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1991)
+
+
+Started POST "/auth/login" for ::1 at 2019-10-11 09:16:30 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"email"=>"jerni81@yahoo.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jerni81@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jerni81@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 1185)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2019-10-11 09:16:32 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"email"=>"jerni81@yahoo.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jerni81@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jerni81@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1043)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/users" for ::1 at 2019-10-11 09:16:36 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jerni81@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jerni81@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Create (42.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "jerni81@yahoo.com"], ["password_digest", "$2a$12$nobw.hcoN9nCIOoy1lG18.g3LfgJKbFvnOTVQ80tb08LpdGFu2Ee2"], ["created_at", "2019-10-11 13:16:36.780455"], ["updated_at", "2019-10-11 13:16:36.780455"]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 200 OK in 304ms (Views: 0.5ms | ActiveRecord: 44.8ms | Allocations: 6552)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-11 09:16:42 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.7ms | Allocations: 4848)
+
+
+Started POST "/auth/login" for ::1 at 2019-10-11 09:16:46 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"email"=>"jerni81@yahoo.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"jerni81@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jerni81@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 247ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 882)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-11 09:17:29 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.0ms | Allocations: 4842)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8461.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pub_subs_development"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (214.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pub_subs_development"[0m
+  [1m[35m (215.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pub_subs_test"[0m
+  [1m[35m (548.6ms)[0m  [1m[35mCREATE DATABASE "pub_subs_development" ENCODING = 'unicode'[0m
+  [1m[35m (471.0ms)[0m  [1m[35mCREATE DATABASE "pub_subs_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "ingredients" CASCADE[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" bigserial primary key, "name" character varying, "category" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ingredients_sandwiches" CASCADE[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ingredients_sandwiches" ("sandwich_id" bigint NOT NULL, "ingredient_id" bigint NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_ingredients_sandwiches_on_sandwich_id_and_ingredient_id" ON "ingredients_sandwiches"  ("sandwich_id", "ingredient_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "sandwiches" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "sandwiches" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint, "photo" character varying, "ingredients_id" bigint)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_sandwiches_on_ingredients_id" ON "sandwiches"  ("ingredients_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_sandwiches_on_user_id" ON "sandwiches"  ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "sandwiches" ADD CONSTRAINT "fk_rails_b5deb90fbb"
+FOREIGN KEY ("ingredients_id")
+  REFERENCES "ingredients" ("id")
+[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "sandwiches" ADD CONSTRAINT "fk_rails_86714258ca"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191009130939)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191004160803),
+(20191004190657),
+(20191004190727),
+(20191004191001),
+(20191004202609),
+(20191004210427),
+(20191009130243),
+(20191009130445);
+
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-11 13:21:20.820276"], ["updated_at", "2019-10-11 13:21:20.820276"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "6f2cabd64d0c7b3dc5a85edc480c1e8db8914930"], ["created_at", "2019-10-11 13:21:20.828722"], ["updated_at", "2019-10-11 13:21:20.828722"]]
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "ingredients" CASCADE[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" bigserial primary key, "name" character varying, "category" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "ingredients_sandwiches" CASCADE[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ingredients_sandwiches" ("sandwich_id" bigint NOT NULL, "ingredient_id" bigint NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_ingredients_sandwiches_on_sandwich_id_and_ingredient_id" ON "ingredients_sandwiches"  ("sandwich_id", "ingredient_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "sandwiches" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "sandwiches" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint, "photo" character varying, "ingredients_id" bigint)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_sandwiches_on_ingredients_id" ON "sandwiches"  ("ingredients_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_sandwiches_on_user_id" ON "sandwiches"  ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "sandwiches" ADD CONSTRAINT "fk_rails_b5deb90fbb"
+FOREIGN KEY ("ingredients_id")
+  REFERENCES "ingredients" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "sandwiches" ADD CONSTRAINT "fk_rails_86714258ca"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191009130939)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191004160803),
+(20191004190657),
+(20191004190727),
+(20191004191001),
+(20191004202609),
+(20191004210427),
+(20191009130243),
+(20191009130445);
+
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-11 13:21:20.979210"], ["updated_at", "2019-10-11 13:21:20.979210"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-10-11 13:21:20.985243"], ["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "6f2cabd64d0c7b3dc5a85edc480c1e8db8914930"], ["created_at", "2019-10-11 13:21:20.990475"], ["updated_at", "2019-10-11 13:21:20.990475"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.7ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "White"], ["category", "Bread"], ["created_at", "2019-10-11 13:21:21.045123"], ["updated_at", "2019-10-11 13:21:21.045123"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Wheat"], ["category", "Bread"], ["created_at", "2019-10-11 13:21:21.049696"], ["updated_at", "2019-10-11 13:21:21.049696"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sunflower Seed"], ["category", "Bread"], ["created_at", "2019-10-11 13:21:21.053371"], ["updated_at", "2019-10-11 13:21:21.053371"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pumpernickle"], ["category", "Bread"], ["created_at", "2019-10-11 13:21:21.057294"], ["updated_at", "2019-10-11 13:21:21.057294"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "7 Grain"], ["category", "Bread"], ["created_at", "2019-10-11 13:21:21.061070"], ["updated_at", "2019-10-11 13:21:21.061070"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cuban Bread"], ["category", "Bread"], ["created_at", "2019-10-11 13:21:21.065444"], ["updated_at", "2019-10-11 13:21:21.065444"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ham"], ["category", "Meat"], ["created_at", "2019-10-11 13:21:21.069254"], ["updated_at", "2019-10-11 13:21:21.069254"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Turkey"], ["category", "Meat"], ["created_at", "2019-10-11 13:21:21.072927"], ["updated_at", "2019-10-11 13:21:21.072927"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Roast Beef"], ["category", "Meat"], ["created_at", "2019-10-11 13:21:21.076796"], ["updated_at", "2019-10-11 13:21:21.076796"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Steak"], ["category", "Meat"], ["created_at", "2019-10-11 13:21:21.080804"], ["updated_at", "2019-10-11 13:21:21.080804"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chicken Tenders"], ["category", "Meat"], ["created_at", "2019-10-11 13:21:21.085598"], ["updated_at", "2019-10-11 13:21:21.085598"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Meatballs"], ["category", "Meat"], ["created_at", "2019-10-11 13:21:21.089316"], ["updated_at", "2019-10-11 13:21:21.089316"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Roast Pork"], ["category", "Meat"], ["created_at", "2019-10-11 13:21:21.092886"], ["updated_at", "2019-10-11 13:21:21.092886"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tomato"], ["category", "Veggies"], ["created_at", "2019-10-11 13:21:21.096595"], ["updated_at", "2019-10-11 13:21:21.096595"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lettuce"], ["category", "Veggies"], ["created_at", "2019-10-11 13:21:21.107028"], ["updated_at", "2019-10-11 13:21:21.107028"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.5ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Onions"], ["category", "Veggies"], ["created_at", "2019-10-11 13:21:21.110858"], ["updated_at", "2019-10-11 13:21:21.110858"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Peppers"], ["category", "Veggies"], ["created_at", "2019-10-11 13:21:21.114973"], ["updated_at", "2019-10-11 13:21:21.114973"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Olives"], ["category", "Veggies"], ["created_at", "2019-10-11 13:21:21.118865"], ["updated_at", "2019-10-11 13:21:21.118865"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cucumbers"], ["category", "Veggies"], ["created_at", "2019-10-11 13:21:21.122551"], ["updated_at", "2019-10-11 13:21:21.122551"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pickles"], ["category", "Veggies"], ["created_at", "2019-10-11 13:21:21.126526"], ["updated_at", "2019-10-11 13:21:21.126526"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mayo"], ["category", "Condiments"], ["created_at", "2019-10-11 13:21:21.130412"], ["updated_at", "2019-10-11 13:21:21.130412"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.6ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mustard"], ["category", "Condiments"], ["created_at", "2019-10-11 13:21:21.134282"], ["updated_at", "2019-10-11 13:21:21.134282"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.5ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Spicy Mustard"], ["category", "Condiments"], ["created_at", "2019-10-11 13:21:21.139942"], ["updated_at", "2019-10-11 13:21:21.139942"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Marinara"], ["category", "Condiments"], ["created_at", "2019-10-11 13:21:21.146247"], ["updated_at", "2019-10-11 13:21:21.146247"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Oil"], ["category", "Condiments"], ["created_at", "2019-10-11 13:21:21.150621"], ["updated_at", "2019-10-11 13:21:21.150621"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vinegar"], ["category", "Condiments"], ["created_at", "2019-10-11 13:21:21.154131"], ["updated_at", "2019-10-11 13:21:21.154131"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Salt"], ["category", "Condiments"], ["created_at", "2019-10-11 13:21:21.157653"], ["updated_at", "2019-10-11 13:21:21.157653"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pepper"], ["category", "Condiments"], ["created_at", "2019-10-11 13:21:21.167220"], ["updated_at", "2019-10-11 13:21:21.167220"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pepper Jack"], ["category", "Cheese"], ["created_at", "2019-10-11 13:21:21.171010"], ["updated_at", "2019-10-11 13:21:21.171010"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Provolone"], ["category", "Cheese"], ["created_at", "2019-10-11 13:21:21.174658"], ["updated_at", "2019-10-11 13:21:21.174658"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cheddar"], ["category", "Cheese"], ["created_at", "2019-10-11 13:21:21.178513"], ["updated_at", "2019-10-11 13:21:21.178513"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "White Cheddar"], ["category", "Cheese"], ["created_at", "2019-10-11 13:21:21.182414"], ["updated_at", "2019-10-11 13:21:21.182414"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Swiss"], ["category", "Cheese"], ["created_at", "2019-10-11 13:21:21.186082"], ["updated_at", "2019-10-11 13:21:21.186082"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSandwich Create (0.8ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at", "photo") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Turkey Sub"], ["created_at", "2019-10-11 13:21:21.216212"], ["updated_at", "2019-10-11 13:21:21.216212"], ["photo", "https://cutpcdnwimages.azureedge.net/images/products/90000/093938-600x600-A.jpg"]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.5ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 1], ["ingredient_id", 1]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 1], ["ingredient_id", 8]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 1], ["ingredient_id", 30]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 1], ["ingredient_id", 15]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 1], ["ingredient_id", 14]]
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSandwich Create (0.4ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at", "photo") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ultimate Sub"], ["created_at", "2019-10-11 13:21:21.280381"], ["updated_at", "2019-10-11 13:21:21.280381"], ["photo", "https://cutpcdnwimages.azureedge.net/images/products/90000/093935-600x600-A.jpg"]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 2], ["ingredient_id", 1]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 2], ["ingredient_id", 8]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 2], ["ingredient_id", 7]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 2], ["ingredient_id", 9]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 2], ["ingredient_id", 32]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 2], ["ingredient_id", 15]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 2], ["ingredient_id", 14]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSandwich Create (0.3ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at", "photo") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Veggie Sub"], ["created_at", "2019-10-11 13:21:21.297852"], ["updated_at", "2019-10-11 13:21:21.297852"], ["photo", "https://cutpcdnwimages.azureedge.net/images/products/90000/093933-600x600-A.jpg"]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 3], ["ingredient_id", 3]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 3], ["ingredient_id", 30]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 3], ["ingredient_id", 15]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 3], ["ingredient_id", 14]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 3], ["ingredient_id", 16]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 3], ["ingredient_id", 17]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 3], ["ingredient_id", 19]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSandwich Create (0.3ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at", "photo") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ham Sub"], ["created_at", "2019-10-11 13:21:21.333937"], ["updated_at", "2019-10-11 13:21:21.333937"], ["photo", "https://cutpcdnwimages.azureedge.net/images/products/95000/098723-600x600-A.jpg"]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 4], ["ingredient_id", 1]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 4], ["ingredient_id", 7]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 4], ["ingredient_id", 31]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 4], ["ingredient_id", 15]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 4], ["ingredient_id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSandwich Create (0.3ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at", "photo") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Roast Beef Sub"], ["created_at", "2019-10-11 13:21:21.368602"], ["updated_at", "2019-10-11 13:21:21.368602"], ["photo", "https://cutpcdnwimages.azureedge.net/images/products/95000/098721-600x600-A.jpg"]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 5], ["ingredient_id", 1]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.5ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 5], ["ingredient_id", 9]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 5], ["ingredient_id", 30]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 5], ["ingredient_id", 15]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 5], ["ingredient_id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSandwich Create (0.3ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at", "photo") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Philly Cheese Sub"], ["created_at", "2019-10-11 13:21:21.384119"], ["updated_at", "2019-10-11 13:21:21.384119"], ["photo", "https://cutpcdnwimages.azureedge.net/images/products/90000/094994-600x600-A.jpg"]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 6], ["ingredient_id", 1]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 6], ["ingredient_id", 10]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 6], ["ingredient_id", 30]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 6], ["ingredient_id", 16]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSandwich Create (0.2ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at", "photo") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cuban"], ["created_at", "2019-10-11 13:21:21.395736"], ["updated_at", "2019-10-11 13:21:21.395736"], ["photo", "https://cutpcdnwimages.azureedge.net/images/products/95000/099633-600x600-A.jpg"]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 7], ["ingredient_id", 6]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 7], ["ingredient_id", 7]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 7], ["ingredient_id", 13]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 7], ["ingredient_id", 33]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 7], ["ingredient_id", 22]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 7], ["ingredient_id", 20]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSandwich Create (0.4ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at", "photo") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chicken Tender Sub"], ["created_at", "2019-10-11 13:21:21.409946"], ["updated_at", "2019-10-11 13:21:21.409946"], ["photo", "https://cutpcdnwimages.azureedge.net/images/products/90000/090355-600x600-A.jpg"]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 8], ["ingredient_id", 1]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 8], ["ingredient_id", 11]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 8], ["ingredient_id", 15]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 8], ["ingredient_id", 14]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSandwich Create (0.3ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at", "photo") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Meatball Sub"], ["created_at", "2019-10-11 13:21:21.424461"], ["updated_at", "2019-10-11 13:21:21.424461"], ["photo", "https://cutpcdnwimages.azureedge.net/images/products/95000/097201-600x600-A.jpg"]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 9], ["ingredient_id", 12]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 9], ["ingredient_id", 30]]
+  [1m[36mSandwich::HABTM_Ingredients Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_sandwiches" ("sandwich_id", "ingredient_id") VALUES ($1, $2)[0m  [["sandwich_id", 9], ["ingredient_id", 24]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/ingredients" for ::1 at 2019-10-11 09:22:03 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-11 09:22:03 -0400
+Started GET "/auth/verify" for ::1 at 2019-10-11 09:22:03 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#verify as HTML
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SandwichesController#index as HTML
+Processing by IngredientsController#index as HTML
+  [1m[36mSandwich Load (3.5ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+  [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 8.3ms | ActiveRecord: 9.0ms | Allocations: 13231)
+
+
+Completed 200 OK in 25ms (Views: 10.7ms | ActiveRecord: 11.5ms | Allocations: 16903)
+
+
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 43ms (Views: 0.2ms | ActiveRecord: 21.3ms | Allocations: 24015)
+
+
+Started POST "/users" for ::1 at 2019-10-11 09:26:44 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"jerni81@yahoo.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jerni81@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "jerni81@yahoo.com"], ["password_digest", "$2a$12$SmXdY9hEPGaaEtOmtCPseegRrVaA9WTqC1KDLqn.u3UoqoXkQrhIS"], ["created_at", "2019-10-11 13:26:44.684820"], ["updated_at", "2019-10-11 13:26:44.684820"]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 200 OK in 257ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 6615)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-11 09:34:39 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.7ms | Allocations: 4612)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-11 09:34:41 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.8ms | Allocations: 4610)
+
+
