@@ -16526,3 +16526,73 @@ Processing by SandwichesController#index as HTML
 Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1991)
 
 
+Started GET "/auth/verify" for ::1 at 2019-10-11 09:57:04 -0400
+Started GET "/sandwiches" for ::1 at 2019-10-11 09:57:04 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (62.2ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 66ms (Views: 3.4ms | ActiveRecord: 62.2ms | Allocations: 1991)
+
+
+  [1m[36mUser Load (79.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 83ms (Views: 0.4ms | ActiveRecord: 79.9ms | Allocations: 3579)
+
+
+Started GET "/ingredients" for ::1 at 2019-10-11 09:57:50 -0400
+Processing by IngredientsController#index as HTML
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.8ms | Allocations: 4610)
+
+
+Started POST "/sandwiches" for ::1 at 2019-10-11 09:57:55 -0400
+Processing by SandwichesController#create as HTML
+  Parameters: {"name"=>"yep", "ingredients"=>[], "sandwich"=>{"name"=>"yep"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[36mSandwich Create (1.8ms)[0m  [1m[32mINSERT INTO "sandwiches" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "yep"], ["created_at", "2019-10-11 13:57:55.319200"], ["updated_at", "2019-10-11 13:57:55.319200"]]
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+  [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:20:in `create'
+Completed 201 Created in 47ms (Views: 0.4ms | ActiveRecord: 41.8ms | Allocations: 2352)
+
+
+Started PUT "/sandwiches/13" for ::1 at 2019-10-11 09:58:02 -0400
+Processing by SandwichesController#update as HTML
+  Parameters: {"sandwich"=>{"name"=>"this"}, "id"=>"13"}
+  [1m[36mSandwich Load (0.4ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+  [1m[36mSandwich Update (0.3ms)[0m  [1m[33mUPDATE "sandwiches" SET "name" = $1, "updated_at" = $2 WHERE "sandwiches"."id" = $3[0m  [["name", "this"], ["updated_at", "2019-10-11 13:58:02.491374"], ["id", 13]]
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:29:in `update'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 2.0ms | Allocations: 2873)
+
+
+Started DELETE "/sandwiches/13" for ::1 at 2019-10-11 09:58:04 -0400
+Processing by SandwichesController#destroy as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches" WHERE "sandwiches"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/sandwiches_controller.rb:44:in `set_sandwich'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich::HABTM_Ingredients Destroy (0.4ms)[0m  [1m[31mDELETE FROM "ingredients_sandwiches" WHERE "ingredients_sandwiches"."sandwich_id" = $1[0m  [["sandwich_id", 13]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[36mSandwich Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sandwiches" WHERE "sandwiches"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sandwiches_controller.rb:38:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 1.6ms | Allocations: 2918)
+
+
+Started GET "/sandwiches" for ::1 at 2019-10-11 09:58:04 -0400
+Processing by SandwichesController#index as HTML
+  [1m[36mSandwich Load (0.3ms)[0m  [1m[34mSELECT "sandwiches".* FROM "sandwiches"[0m
+  ↳ app/controllers/sandwiches_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1991)
+
+
