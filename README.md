@@ -9,7 +9,6 @@ I'm planning on building a sandwich ordering app. The name of the app is going t
 React
 <br>Ruby on Rails
 <br>Axios
-<br>FontAwesome
 <br>CORS
 <br>react-router-dom
 <br>JSON web Token
