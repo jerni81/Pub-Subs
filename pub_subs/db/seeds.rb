@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+Ingredient.delete_all
+Sandwich.delete_all
 
 white = Ingredient.create(name: "White", category: "Bread")
 wheat = Ingredient.create(name: "Wheat", category: "Bread")
