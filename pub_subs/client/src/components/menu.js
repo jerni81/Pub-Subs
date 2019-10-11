@@ -35,10 +35,13 @@ class Menu extends React.Component{
 
   render(){
     console.log(this.props)
-    let data = this.props.getMenu  ?  this.props.getMenu : this.state.showMenu
-  const subs = data.map((sub) => {
+    // let data = this.props.getMenu  ?  this.props.getMenu : this.state.showMenu
+  const subs = this.props.getMenu.map((sub) => {
     return <div className="menuItem">
-      <img src={sub.photo} className="menuPhoto" alt="   Picture this... we're making your sandwich right now!!"/>
+      {sub.photo ? (
+        <img src={sub.photo} className="menuPhoto" alt="   Picture this... we're making your sandwich right now!!"/>) : (
+          <p>Picture this... we're making your sandwich right now!!</p>
+        )}
       <form key={sub.id}>
           <label className="indiv">
           {sub.name}

@@ -73,7 +73,11 @@ class App extends React.Component {
    }
 
    handleNew = async (sandData) => {
-     await newSand(sandData);
+     const newSandy = await newSand(sandData);
+     this.setState(prevState => ({
+       menuData: [...prevState.menuData, newSandy]
+     })
+    )
    }
 
    handleDelete = async (e, id) => {
@@ -91,7 +95,10 @@ class App extends React.Component {
    }
 
    handleEdit = async (id, sandData) => {
-     await editSand(id, sandData);
+     const updatedSub = await editSand(id, sandData);
+     this.setState(prevState => ({
+       menuData: prevState.menuData.map(sub => sub.id === updatedSub.id ? updatedSub : sub)
+     }))
    }
 
 
